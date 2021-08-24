@@ -13,15 +13,24 @@ Regras do Fizzbuzz
 # qualquer outro error e porque o codigo quebrou
 
 
+def multiple_of_5(num):
+    return num % 5 == 0
+
+
+def multiple_of_3(num):
+    return num % 3 == 0
+
+
 def robot(pos):
     say = str(pos)
-    if pos % 3 == 0 and pos % 5 == 0:
+
+    if multiple_of_3(pos) and multiple_of_5(pos):
         say = 'fizzbuzz'
 
-    elif pos % 5 == 0:
+    elif multiple_of_5(pos):
         say = 'buzz'
 
-    elif pos % 3 == 0:
+    elif multiple_of_3(pos):
         say = 'fizz'
 
     return say
