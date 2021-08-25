@@ -8,17 +8,15 @@ Regras do Fizzbuzz
 
 """
 
-
 # assertionError  = falhar no test
 # qualquer outro error e porque o codigo quebrou
 
-
-def multiple_of_5(num):
-    return num % 5 == 0
+from functools import partial
 
 
-def multiple_of_3(num):
-    return num % 3 == 0
+multiple_of = lambda base, num: num % base == 0
+multiple_of_5 = partial(multiple_of, 5)
+multiple_of_3 = partial(multiple_of, 3)
 
 
 def robot(pos):
